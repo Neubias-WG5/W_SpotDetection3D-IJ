@@ -53,9 +53,6 @@ ADD IJSpotDetection3D.ijm /fiji/macros/macro.ijm
 
 ADD wrapper.py /app/wrapper.py
 
-ADD utilities /app/utilities
-RUN cd /app/utilities && pip install .
-
 ENTRYPOINT ["python", "/app/wrapper.py"]
 
 
