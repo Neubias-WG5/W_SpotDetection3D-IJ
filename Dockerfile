@@ -11,18 +11,6 @@ RUN cd /Cytomine-python-client && git checkout tags/v2.2.0 && pip install .
 RUN rm -r /Cytomine-python-client
 
 # ---------------------------------------------------------------------------------------------------------------------
-# Install Neubias-W5-Utilities (annotation exporter, compute metrics, helpers,...)
-RUN git clone https://github.com/Neubias-WG5/neubiaswg5-utilities.git
-RUN cd /neubiaswg5-utilities/ && git checkout tags/v0.5.2a && pip install .
-
-# install utilities binaries
-RUN chmod +x /neubiaswg5-utilities/bin/*
-RUN cp /neubiaswg5-utilities/bin/* /usr/bin/
-
-# cleaning
-RUN rm -r /neubiaswg5-utilities
-
-# ---------------------------------------------------------------------------------------------------------------------
 # Fiji installation
 # Install virtual X server
 RUN apt-get update && apt-get install -y unzip xvfb libx11-dev libxtst-dev libxrender-dev
@@ -41,6 +29,18 @@ RUN mkdir -p /fiji/data
 
 # Clean up
 RUN rm fiji-linux64-20170530.zip
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Install Neubias-W5-Utilities (annotation exporter, compute metrics, helpers,...)
+RUN git clone https://github.com/Neubias-WG5/neubiaswg5-utilities.git
+RUN cd /neubiaswg5-utilities/ && git checkout tags/v0.5.8 && pip install .
+
+# install utilities binaries
+RUN chmod +x /neubiaswg5-utilities/bin/*
+RUN cp /neubiaswg5-utilities/bin/* /usr/bin/
+
+# cleaning
+RUN rm -r /neubiaswg5-utilities
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Install Fiji plugins
