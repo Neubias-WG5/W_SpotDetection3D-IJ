@@ -50,8 +50,10 @@ RUN cd /fiji/plugins && wget -O FeatureJ_.jar https://imagescience.org/meijering
 # ---------------------------------------------------------------------------------------------------------------------
 # Install Macro
 ADD IJSpotDetection3D.ijm /fiji/macros/macro.ijm
-
 ADD wrapper.py /app/wrapper.py
+
+# for running the wrapper locally
+ADD descriptor.json /app/descriptor.json
 
 ENTRYPOINT ["python", "/app/wrapper.py"]
 
