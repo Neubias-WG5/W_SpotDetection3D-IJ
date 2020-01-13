@@ -1,5 +1,5 @@
 {
-    "name": "3DSpotDetection-ImageJ",
+    "name": "SpotDetection3D-IJ",
     "container-image": {
         "image": "neubiaswg5/w_spotdetection3d-ij",
         "type": "singularity"
