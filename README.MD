@@ -1,3 +1,2 @@
 # W_SpotDetection3D-IJ
-
-3D spot detection in FIJI using a LoG filter and the detection of minima
+This workflow detects spots in a 3D image by filtering the image by Laplacian of Gaussian (user defined radius) and detecting local intensity minima in 3x3x3 regions below a minimum intensity value (user defined threshold).
